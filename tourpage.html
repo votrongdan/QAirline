@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Skywings | Tour Destinations</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="index.html" class="logo">Skywings</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html#home">HOME</a></li>
+        <li><a href="index.html#about">ABOUT</a></li>
+        <li><a href="tourpage.html">TOUR</a></li>
+        <li><a href="index.html#package">PACKAGE</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+        <li><a href="#">BOOK TRIP</a></li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn">BOOK TRIP</button>
+      </div>
+    </nav>
+
+    <section class="section__container tour__container">
+      <h2 class="section__header">Explore Our Amazing Tours</h2>
+      <p class="section__description">
+        Discover Incredible Destinations Tailored Just for You
+      </p>
+
+      <div class="tour__filters">
+        <button class="tour__filter-btn active" data-filter="all">All</button>
+        <button class="tour__filter-btn" data-filter="city">City</button>
+        <button class="tour__filter-btn" data-filter="beach">Beach</button>
+        <button class="tour__filter-btn" data-filter="romantic">Romantic</button>
+      </div>
+
+      <div class="tour__grid">
+        <div class="tour__card" data-category="city">
+          <div class="tour__card-image">
+            <img src="assets/destination-1.jpg" alt="New York City Explorer">
+            <div class="tour__card-rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.7
+            </div>
+          </div>
+          <div class="tour__card-details">
+            <h4>New York City Explorer</h4>
+            <div class="tour__card-info">
+              <p><i class="ri-map-pin-line"></i> New York, USA</p>
+              <p><i class="ri-time-line"></i> 7 Days</p>
+            </div>
+            <div class="tour__card-bottom">
+              <h5>$1,299</h5>
+              <button class="btn btn-small">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour__card" data-category="romantic">
+          <div class="tour__card-image">
+            <img src="assets/destination-2.jpg" alt="Paris Romance Getaway">
+            <div class="tour__card-rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.5
+            </div>
+          </div>
+          <div class="tour__card-details">
+            <h4>Paris Romance Getaway</h4>
+            <div class="tour__card-info">
+              <p><i class="ri-map-pin-line"></i> Paris, France</p>
+              <p><i class="ri-time-line"></i> 5 Days</p>
+            </div>
+            <div class="tour__card-bottom">
+              <h5>$1,499</h5>
+              <button class="btn btn-small">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour__card" data-category="beach">
+          <div class="tour__card-image">
+            <img src="assets/destination-3.jpg" alt="Bali Tropical Paradise">
+            <div class="tour__card-rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.8
+            </div>
+          </div>
+          <div class="tour__card-details">
+            <h4>Bali Tropical Paradise</h4>
+            <div class="tour__card-info">
+              <p><i class="ri-map-pin-line"></i> Bali, Indonesia</p>
+              <p><i class="ri-time-line"></i> 10 Days</p>
+            </div>
+            <div class="tour__card-bottom">
+              <h5>$1,699</h5>
+              <button class="btn btn-small">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour__card" data-category="city">
+          <div class="tour__card-image">
+            <img src="assets/showcase.jpg" alt="Tokyo Urban Adventure">
+            <div class="tour__card-rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.6
+            </div>
+          </div>
+          <div class="tour__card-details">
+            <h4>Tokyo Urban Adventure</h4>
+            <div class="tour__card-info">
+              <p><i class="ri-map-pin-line"></i> Tokyo, Japan</p>
+              <p><i class="ri-time-line"></i> 6 Days</p>
+            </div>
+            <div class="tour__card-bottom">
+              <h5>$1,399</h5>
+              <button class="btn btn-small">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour__card" data-category="beach">
+          <div class="tour__card-image">
+            <img src="assets/header.png" alt="Maldives Island Escape">
+            <div class="tour__card-rating">
+              <span><i class="ri-star-fill"></i></span>
+              4.9
+            </div>
+          </div>
+          <div class="tour__card-details">
+            <h4>Maldives Island Escape</h4>
+            <div class="tour__card-info">
+              <p><i class="ri-map-pin-line"></i> Maldives</p>
+              <p><i class="ri-time-line"></i> 8 Days</p>
+            </div>
+            <div class="tour__card-bottom">
+              <h5>$2,199</h5>
+              <button class="btn btn-small">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <a href="index.html" class="logo">Skywings</a>
+          </div>
+          <p>
+            Explore the world with ease and excitement through our comprehensive
+            travel platform. Your journey begins here, where seamless planning
+            meets unforgettable experiences.
+          </p>
+          <ul class="footer__socials">
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-youtube-line"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Flights</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Cruise</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <ul class="footer__links">
+            <li>
+              <a href="#">
+                <span><i class="ri-phone-fill"></i></span> +91 9876543210
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><i class="ri-record-mail-line"></i></span> info@skywings
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><i class="ri-map-pin-2-fill"></i></span> New Delhi, India
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Subscribe</h4>
+          <form action="/">
+            <input type="text" placeholder="Enter your email" />
+            <button class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 Web Design Mastery. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="tour.js"></script>
+  </body>
+</html>
