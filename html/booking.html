@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <title>Flight Booking | SKYWINGS</title>
+</head>
+<body>
+    <nav>
+        <div class="nav__header">
+            <div class="nav__logo">
+                <a href="index.html" class="logo">Skywings</a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="tourpage.html">TOUR</a></li>
+            <li><a href="package.html">PACKAGE</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="booking.html">BOOK TRIP</a></li>
+        </ul>
+        <div class="nav__btns">
+            <a href="booking.html" class="btn">BOOK TRIP</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header__container">
+            <h1>Book Your Flight with Skywings</h1>
+            <p>Seamless and easy flight booking process</p>
+        </div>
+    </header>
+
+    <section class="section__container booking__container">
+        <h2 class="section__header">Find Your Flight</h2>
+        <form class="booking__form">
+            <div class="form__group">
+                <label for="departure">Departure City</label>
+                <input type="text" id="departure" placeholder="Enter your departure city">
+            </div>
+            <div class="form__group">
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" placeholder="Enter your destination">
+            </div>
+            <div class="form__group">
+                <label for="departure-date">Departure Date</label>
+                <input type="date" id="departure-date">
+            </div>
+            <div class="form__group">
+                <label for="return-date">Return Date</label>
+                <input type="date" id="return-date">
+            </div>
+            <div class="form__group">
+                <label for="passengers">Passengers</label>
+                <select id="passengers">
+                    <option value="1">1 Passenger</option>
+                    <option value="2">2 Passengers</option>
+                    <option value="3">3 Passengers</option>
+                    <option value="4">4+ Passengers</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Search Flights</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer__bar">
+            Copyright © 2024 Skywings. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
