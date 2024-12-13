@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAirline Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>QAirline - Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#post-info">Đăng Thông Tin</a></li>
+                <li><a href="#manage-aircraft">Quản Lý Tàu Bay</a></li>
+                <li><a href="#manage-flights">Quản Lý Chuyến Bay</a></li>
+                <li><a href="#ticket-stats">Thống Kê Đặt Vé</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <p>Chào mừng quản trị viên! Đây là giao diện tổng quan.</p>
+        </section>
+        <section id="post-info">
+            <h2>Đăng Thông Tin</h2>
+            <form id="post-form">
+                <label for="post-title">Tiêu Đề:</label>
+                <input type="text" id="post-title" name="post-title" required>
+                <label for="post-content">Nội Dung:</label>
+                <textarea id="post-content" name="post-content" rows="5" required></textarea>
+                <label for="post-image">Hình Ảnh:</label>
+                <input type="file" id="post-image" name="post-image">
+                <button type="submit">Đăng Bài</button>
+            </form>
+        </section>
+        <section id="manage-aircraft">
+            <h2>Quản Lý Tàu Bay</h2>
+            <form id="aircraft-form">
+                <label for="aircraft-code">Mã Tàu Bay:</label>
+                <input type="text" id="aircraft-code" name="aircraft-code" required>
+                <label for="aircraft-maker">Hãng Sản Xuất:</label>
+                <input type="text" id="aircraft-maker" name="aircraft-maker" required>
+                <label for="seat-info">Thông Tin Ghế:</label>
+                <textarea id="seat-info" name="seat-info" rows="4" required></textarea>
+                <button type="submit">Thêm Tàu Bay</button>
+            </form>
+        </section>
+        <section id="manage-flights">
+            <h2>Quản Lý Chuyến Bay</h2>
+            <form id="flight-form">
+                <label for="flight-number">Số Hiệu:</label>
+                <input type="text" id="flight-number" name="flight-number" required>
+                <label for="aircraft">Tàu Bay:</label>
+                <input type="text" id="aircraft" name="aircraft" required>
+                <label for="departure">Điểm Đi:</label>
+                <input type="text" id="departure" name="departure" required>
+                <label for="arrival">Điểm Đến:</label>
+                <input type="text" id="arrival" name="arrival" required>
+                <label for="departure-time">Giờ Khởi Hành:</label>
+                <input type="datetime-local" id="departure-time" name="departure-time" required>
+                <button type="submit">Thêm Chuyến Bay</button>
+            </form>
+        </section>
+        <section id="flight-list">
+            <h2>Danh Sách Các Chuyến Bay</h2>
+            <div class="flight-container">
+                <ul id="flight-list-items">
+                    <!-- Các chuyến bay sẽ được hiển thị ở đây -->
+                </ul>
+            </div>
+            <div id="flight-actions">
+                <form id="edit-flight-form" style="display: none;">
+                    <h3>Chỉnh Sửa Giờ Bay</h3>
+                    <label for="edit-flight-time">Giờ Bay Mới:</label>
+                    <input type="datetime-local" id="edit-flight-time" required>
+                    <button type="submit">Cập Nhật</button>
+                </form>
+                <div id="flight-stats" style="display: none;">
+                    <h3>Thống Kê Đặt Vé</h3>
+                    <p id="stats-placeholder">Chọn một chuyến bay để xem thống kê.</p>
+                    <canvas id="stats-chart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ticket-stats">
+            <h2>Thống Kê Đặt Vé</h2>
+            <canvas id="ticket-chart"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 QAirline. All rights reserved.</p>
+    </footer>
+    <script src="admin.js"></script>
+</body>
+</html>

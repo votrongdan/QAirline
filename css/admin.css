@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa trang chính */
+    background-color: #f8f9fa; /* Thêm màu nền nhẹ */
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    padding: 7rem 1rem 2rem; /* Đẩy nội dung xuống dưới header */
+    gap: 2rem; /* Thêm khoảng cách giữa các phần */
+}
+
+section {
+    scroll-margin-top: 6rem; /* Thêm khoảng cách để tránh bị che khuất */
+    padding-top: 1rem; /* Cung cấp một chút không gian phía trên */
+    width: 100%;
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+h2 {
+    text-align: left; /* Tiêu đề không căn giữa */
+    margin-bottom: 1rem;
+    color: #0056b3;
+}
+
+.flight-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#flight-list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#flight-list-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+#flight-list-items li button {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#flight-list-items li button:hover {
+    background-color: #c9302c;
+}
+
+#edit-flight-form, #flight-stats {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea, button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%; /* Tăng chiều rộng cho box nhập */
+    max-width: 1180px; /* Box nhập dài hơn nhưng không quá lớn */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    align-self: flex-start; /* Đặt nút ở bên trái */
+}
+
+button:hover {
+    background-color: #003f7f;
+}
+
+footer {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: #666;
+}
