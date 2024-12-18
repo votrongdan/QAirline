@@ -24,7 +24,7 @@ try {
                     FROM Flights 
                     WHERE DepartureCity LIKE :departureCity 
                     AND ArrivalCity LIKE :arrivalCity
-                    AND DATE(DepartureTime) = :departureDate";
+                    AND DATE_FORMAT(DepartureTime, '%Y-%m-%d') = :departureDate";
 
     // Chuẩn bị truy vấn vé một chiều
     $stmt_one_way = $conn->prepare($sql_one_way);
@@ -43,7 +43,7 @@ try {
                        FROM Flights 
                        WHERE DepartureCity LIKE :arrivalCity 
                        AND ArrivalCity LIKE :departureCity 
-                       AND DATE(DepartureTime) = :returnDate";
+                       AND DATE_FORMAT(DepartureTime, '%Y-%m-%d') = :returnDate";
 
         $stmt_return = $conn->prepare($sql_return);
         $stmt_return->bindValue(':arrivalCity', "%$arrivalCity%", PDO::PARAM_STR);
