@@ -40,22 +40,22 @@
 
     <section class="section__container booking__container">
         <h2 class="section__header">Find Your Flight</h2>
-        <form class="booking__form">
+        <form class="booking__form" action="searchFlight.php" method="get">
             <div class="form__group">
                 <label for="departure">Departure City</label>
-                <input type="text" id="departure" placeholder="Enter your departure city">
+                <input type="text" id="departure" name="departure" placeholder="Enter your departure city">
             </div>
             <div class="form__group">
                 <label for="destination">Destination</label>
-                <input type="text" id="destination" placeholder="Enter your destination">
+                <input type="text" id="destination" name="destination" placeholder="Enter your destination">
             </div>
             <div class="form__group">
                 <label for="departure-date">Departure Date</label>
-                <input type="date" id="departure-date">
+                <input type="date" id="departure-date" name="departure-date">
             </div>
             <div class="form__group">
                 <label for="return-date">Return Date</label>
-                <input type="date" id="return-date">
+                <input type="date" id="return-date" name="return-date">
             </div>
             <div class="form__group">
                 <label for="passengers">Passengers</label>

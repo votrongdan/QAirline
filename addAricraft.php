@@ -5,6 +5,7 @@ require 'db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Lấy dữ liệu từ form
+        $aircraftId = $_POST['aircraftId'] ?? '';
         $model = $_POST['model'] ?? '';
         $manufacturer = $_POST['manufacturer'] ?? '';
         $economySeats = $_POST['economy-seats'] ?? '';
@@ -12,12 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $YearOfManufacture = $_POST['year'] ?? '';
 
         // Câu lệnh SQL sử dụng Prepared Statements để ngăn chặn SQL Injection
-        $sql = "INSERT INTO Aircrafts (Model, Manufacturer, EconomySeat, BusinessSeat, YearOfManufacture) VALUES (:model, :manufacturer, :economySeats, :businessSeats, :YearOfManufacture)";
+        $sql = "INSERT INTO Aircrafts (AircraftID, Model, Manufacturer, EconomySeat, BusinessSeat, YearOfManufacture) VALUES (:aircraftId, :model, :manufacturer, :economySeats, :businessSeats, :YearOfManufacture)";
 
         // Chuẩn bị truy vấn
         $stmt = $conn->prepare($sql);
 
         // Gán giá trị cho các tham số trong truy vấn
+        $stmt->bindParam(':aircraftId', $aircraftId, PDO::PARAM_STR);
         $stmt->bindParam(':model', $model, PDO::PARAM_STR);
         $stmt->bindParam(':manufacturer', $manufacturer, PDO::PARAM_STR);
         $stmt->bindParam(':economySeats', $economySeats, PDO::PARAM_STR);
