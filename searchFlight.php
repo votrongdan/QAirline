@@ -33,7 +33,7 @@ try {
                        FROM Flights 
                        WHERE DepartureCity LIKE :arrivalCity 
                        AND ArrivalCity LIKE :departureCity 
-                       AND DATE(DepartureTime) = :departureDate";
+                       AND DATE(DepartureTime) = :returnDate";
 
         $stmt_return = $conn->prepare($sql_return);
         $stmt_return->bindValue(':arrivalCity', "%$arrivalCity%", PDO::PARAM_STR);
@@ -45,65 +45,8 @@ try {
         $flights_return = $stmt_return->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Hiển thị kết quả
-    echo "<h1>Kết quả tìm kiếm:</h1>";
-
-    // Hiển thị kết quả vé một chiều
-    if (true) {
-        echo "<h2>Chuyến đi:</h2>";
-        echo "<table border='1'>
-                <tr>
-                    <th>Mã chuyến bay</th>
-                    <th>Số hiệu chuyến bay</th>
-                    <th>Thành phố khởi hành</th>
-                    <th>Điểm đến</th>
-                    <th>Thời gian khởi hành</th>
-                    <th>Mã máy bay</th>
-                </tr>";
-        foreach ($flights_one_way as $flight) {
-            echo "<tr>
-                    <td>" . htmlspecialchars($flight['FlightID']) . "</td>
-                    <td>" . htmlspecialchars($flight['FlightNumber']) . "</td>
-                    <td>" . htmlspecialchars($flight['DepartureCity']) . "</td>
-                    <td>" . htmlspecialchars($flight['ArrivalCity']) . "</td>
-                    <td>" . htmlspecialchars($flight['DepartureTime']) . "</td>
-                    <td>" . htmlspecialchars($flight['AircraftID']) . "</td>
-                  </tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "<p>Không tìm thấy chuyến bay đi phù hợp.</p>";
-    }
-
-    // Hiển thị kết quả vé khứ hồi (nếu có)
-    if (!empty($returnDate)) {
-        if (count($flights_return) > 0) {
-            echo "<h2>Chuyến về:</h2>";
-            echo "<table border='1'>
-                    <tr>
-                        <th>Mã chuyến bay</th>
-                        <th>Số hiệu chuyến bay</th>
-                        <th>Thành phố khởi hành</th>
-                        <th>Điểm đến</th>
-                        <th>Thời gian khởi hành</th>
-                        <th>Mã máy bay</th>
-                    </tr>";
-            foreach ($flights_return as $flight) {
-                echo "<tr>
-                        <td>" . htmlspecialchars($flight['FlightID']) . "</td>
-                        <td>" . htmlspecialchars($flight['FlightNumber']) . "</td>
-                        <td>" . htmlspecialchars($flight['DepartureCity']) . "</td>
-                        <td>" . htmlspecialchars($flight['ArrivalCity']) . "</td>
-                        <td>" . htmlspecialchars($flight['DepartureTime']) . "</td>
-                        <td>" . htmlspecialchars($flight['AircraftID']) . "</td>
-                      </tr>";
-            }
-            echo "</table>";
-        } else {
-            echo "<p>Không tìm thấy chuyến bay về phù hợp.</p>";
-        }
-    }
-
+    // Chuyển dữ liệu sang file HTML
+    include 'flight.html';
 } catch (PDOException $e) {
     echo "Lỗi kết nối: " . $e->getMessage();
 }
