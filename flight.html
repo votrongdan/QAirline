@@ -95,7 +95,6 @@
     <?php if (!empty($flights_return)) : ?>
     <table>
         <tr>
-            <th>Mã chuyến bay</th>
             <th>Số hiệu chuyến bay</th>
             <th>Thành phố khởi hành</th>
             <th>Điểm đến</th>
@@ -105,7 +104,6 @@
         </tr>
         <?php foreach ($flights_return as $flight) : ?>
         <tr>
-            <td><?= htmlspecialchars($flight['FlightID']) ?></td>
             <td><?= htmlspecialchars($flight['FlightNumber']) ?></td>
             <td><?= htmlspecialchars($flight['DepartureCity']) ?></td>
             <td><?= htmlspecialchars($flight['ArrivalCity']) ?></td>
