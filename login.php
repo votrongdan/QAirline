@@ -36,17 +36,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     } else {
         // Sai tên đăng nhập hoặc mật khẩu
-        // echo "Invalid username or password.";
+        echo "Invalid username or password.";
         // echo $user['username'];
         // echo $user['password'];
         // echo password_verify($inputPassword, $user['password']);
         // echo $inputPassword;
         // echo password_hash("dan", PASSWORD_DEFAULT);
         // Đăng nhập thành công
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
-        header("Location: admin.php"); // Chuyển hướng đến trang HTML
-        exit;
     }
 }
 ?>
