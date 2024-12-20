@@ -2,8 +2,8 @@
 // Thông tin kết nối cơ sở dữ liệu
 $host = 'localhost';
 $dbname = 'QAirline';
-$username = 'dan';
-$password = 'dan';
+$username = '';
+$password = '';
 
 try {
     // Kết nối đến cơ sở dữ liệu bằng PDO
