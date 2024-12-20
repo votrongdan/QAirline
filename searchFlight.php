@@ -1,30 +1,20 @@
 <?php
 require 'db.php';
-// Thông tin kết nối cơ sở dữ liệu
-// $servername = "localhost"; // Địa chỉ server
-// $username = "root";        // Tên người dùng cơ sở dữ liệu
-// $password = "";            // Mật khẩu cơ sở dữ liệu
-// $dbname = "skywings_db";   // Tên cơ sở dữ liệu
 
 try {
-//     // Tạo kết nối PDO
-//     $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
-//     // Thiết lập chế độ lỗi
-//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     // Lấy dữ liệu từ form
-    $departureCity = $_GET['departure'] ?? '';
-    $arrivalCity = $_GET['destination'] ?? '';
-    $departureDate = $_GET['departure_date'] ?? '';
-    $returnDate = $_GET['return_date'] ?? null; // Ngày về (có thể không có)
-    $passengers = $_GET['passengers'] ?? '1';
+    $departureCity = $_GET['departure'];
+    $arrivalCity = $_GET['destination'];
+    $departureDate = $_GET['departure-date'];
+    $returnDate = $_GET['return-date']; // Ngày về (có thể không có)
+    $passengers = $_GET['passengers'];
 
     // Tạo câu truy vấn cho vé một chiều
     $sql_one_way = "SELECT FlightID, FlightNumber, DepartureCity, ArrivalCity, DepartureTime, AircraftID 
                     FROM Flights 
                     WHERE DepartureCity LIKE :departureCity 
                     AND ArrivalCity LIKE :arrivalCity
-                    AND DATE_FORMAT(DepartureTime, '%Y-%m-%d') = :departureDate";
+                    AND DATE(DepartureTime) = :departureDate";
 
     // Chuẩn bị truy vấn vé một chiều
     $stmt_one_way = $conn->prepare($sql_one_way);
@@ -43,7 +33,7 @@ try {
                        FROM Flights 
                        WHERE DepartureCity LIKE :arrivalCity 
                        AND ArrivalCity LIKE :departureCity 
-                       AND DATE_FORMAT(DepartureTime, '%Y-%m-%d') = :returnDate";
+                       AND DATE(DepartureTime) = :departureDate";
 
         $stmt_return = $conn->prepare($sql_return);
         $stmt_return->bindValue(':arrivalCity', "%$arrivalCity%", PDO::PARAM_STR);
@@ -59,7 +49,7 @@ try {
     echo "<h1>Kết quả tìm kiếm:</h1>";
 
     // Hiển thị kết quả vé một chiều
-    if (count($flights_one_way) > 0) {
+    if (true) {
         echo "<h2>Chuyến đi:</h2>";
         echo "<table border='1'>
                 <tr>
