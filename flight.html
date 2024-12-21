@@ -6,6 +6,29 @@
     <link rel="stylesheet" href="css/flight.css"/>
 </head>
 <body>
+    <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <img src="assets/qairline logo.png" alt="logo">
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">TRANG CHỦ</a></li>
+          <li><a href="about.html">VỀ CHÚNG TÔI</a></li>
+          <li><a href="tourpage.html">TOUR</a></li>
+          <li><a href="package.html">TRỌN GÓI</a></li>
+          <li><a href="contact.html">LIÊN HỆ</a></li>
+          <li><a href="#">ĐẶT VÉ NGAY</a></li>
+        </ul>
+        <div class="nav__btns">
+          <a href="booking.html" class="btn">ĐẶT VÉ NGAY</a>
+          <a href="lookup.html" class="btn" id="lookup-btn">TRA CỨU VÉ</a>
+        </div>
+      </nav>
+
     <?php if (!empty($flights_one_way)) : ?>
     <form method="post" action="book.php">
         <!-- Chuyến đi -->

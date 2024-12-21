@@ -1,25 +1,19 @@
-/* Modern CSS Reset */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 :root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary: #64748b;
-    --success: #10b981;
-    --danger: #ef4444;
-    --warning: #f59e0b;
-    --background: #f8fafc;
-    --surface: var(--white);
-    --text: #1e293b;
-    --text-light: #64748b;
-    --border: #e2e8f0;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --primary-color: #ff5a5f;
+  --primary-color-dark: #e54248;
+  --text-dark: #0a0a0a;
+  --text-light: #737373;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 /* Base Styles */
@@ -89,6 +83,69 @@ h2::before {
     background: var(--primary);
     border-radius: 2px;
 }
+
+nav {
+    position: fixed;
+    isolation: isolate;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+  }
+  
+  .nav__header {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+  }
+  
+  .nav__logo .logo {
+    font-size: 1.5rem;
+    color: var(--white);
+  }
+  
+  .nav__menu__btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+  
+  .nav__links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--primary-color);
+    transition: transform 0.5s;
+    z-index: -1;
+  }
+  
+  .nav__links.open {
+    transform: translateY(100%);
+  }
+  
+  .nav__links a {
+    font-weight: 600;
+    color: var(--white);
+    white-space: nowrap;
+  }
+  
+  .nav__links a:hover {
+    color: var(--text-dark);
+  }
+  
+  .nav__btns {
+    display: flex;
+    gap: 20px
+  }
 
 /* Enhanced Tables */
 table {
@@ -387,7 +444,7 @@ select.form-control {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --background: #0f172a;
         --surface: #1e293b;
@@ -399,4 +456,4 @@ select.form-control {
     tbody tr:hover {
         background: #334155;
     }
-}
+} */
