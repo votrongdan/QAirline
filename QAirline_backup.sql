@@ -30,7 +30,7 @@ CREATE TABLE `Aircrafts` (
   `EconomySeat` int NOT NULL,
   `BusinessSeat` int NOT NULL,
   PRIMARY KEY (`AircraftID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `Aircrafts` (
 
 LOCK TABLES `Aircrafts` WRITE;
 /*!40000 ALTER TABLE `Aircrafts` DISABLE KEYS */;
-INSERT INTO `Aircrafts` VALUES ('A1','Airbus A330','Airbus',2023,12,12),('A2','Airbus A350','Airbus',2024,20,10),('A3','Airbus A220','Airbus',2022,10,5),('A4','BelugaXL','Airbus',2024,30,30),('B1','Boeing 737','Boeing',2024,12,12),('B2','Boeing 777','Boeing',2024,10,10);
+INSERT INTO `Aircrafts` VALUES ('A1','Airbus A330','Airbus',2023,12,12),('A2','Airbus A350','Airbus',2024,20,10),('A3','Airbus A220','Airbus',2022,10,5),('A4','BelugaXL','Airbus',2024,30,30),('A5','Airbus A340','Airbus',2024,10,10),('B1','Boeing 737','Boeing',2024,12,12),('B2','Boeing 777','Boeing',2024,10,10),('B3','Boeing 747','Boeing',2024,15,10);
 /*!40000 ALTER TABLE `Aircrafts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,11 +59,7 @@ CREATE TABLE `Flights` (
   `AircraftID` varchar(10) NOT NULL,
   PRIMARY KEY (`FlightID`),
   UNIQUE KEY `FlightNumber` (`FlightNumber`)
-<<<<<<< HEAD
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
->>>>>>> 3f090696754c046597111c5de9db75a3d61b8f41
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +68,7 @@ CREATE TABLE `Flights` (
 
 LOCK TABLES `Flights` WRITE;
 /*!40000 ALTER TABLE `Flights` DISABLE KEYS */;
-INSERT INTO `Flights` VALUES (1,'DEMO123','Ha Noi','Ho Chi Minh City','1212-12-12 12:12:00','A1'),(2,'234','Ha Noi','Da Nang','1111-11-11 11:11:00','A2'),(3,'asdfasdf','Vinh','Ha Noi','1232-01-31 03:45:00','B1'),(4,'werafd','Ha Noi','Vinh','1232-02-05 00:00:00','B1');
+INSERT INTO `Flights` VALUES (1,'VN001','Hà Nội','Thành phố Hồ Chí Minh','2024-12-25 12:00:00','A1'),(2,'VN002','Hà Nội','Đà Nẵng','2024-12-25 11:00:00','A2'),(3,'VN003','Vinh','Hà Nội','2024-12-25 03:45:00','B1'),(4,'VN004','Hà Nội','Vinh','2024-12-29 03:00:00','B1'),(5,'QT001','Hà Nội','Tokyo','2024-12-27 10:00:00','B2'),(6,'QT002','Hà Nội','Berlin','2025-01-01 09:00:00','A3'),(7,'QT003','Tokyo','Berlin','2025-01-02 08:00:00','A4'),(8,'QT004','Đà Nẵng','Paris','2024-12-25 07:00:00','B2'),(9,'QT005','Đà Nẵng','Singapore','2024-12-27 08:00:00','B1'),(10,'VN005','Đà Nẵng','Hà Nội','2024-12-25 20:30:00','B2'),(11,'QT006','Hà Nội','New York','2025-01-01 20:00:00','A3'),(12,'QT007','New York','Hà Nội','2025-01-04 07:00:00','A4');
 /*!40000 ALTER TABLE `Flights` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,11 +88,7 @@ CREATE TABLE `Passengers` (
   `PassportNumber` varchar(20) DEFAULT NULL,
   `Nationality` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`PassengerID`)
-<<<<<<< HEAD
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
->>>>>>> 3f090696754c046597111c5de9db75a3d61b8f41
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +97,7 @@ CREATE TABLE `Passengers` (
 
 LOCK TABLES `Passengers` WRITE;
 /*!40000 ALTER TABLE `Passengers` DISABLE KEYS */;
-INSERT INTO `Passengers` VALUES (6,'demo','1212-12-12','demo@gmail.com','123456789',NULL,NULL),(7,'a','2342-12-11','a@gmail.com','1986756323',NULL,NULL),(8,'bbbbb','1111-02-15','hacker@gmail.com','1111111111',NULL,NULL);
+INSERT INTO `Passengers` VALUES (6,'Nguyễn Văn Nam','2000-12-12','demo@gmail.com','123456789',NULL,NULL),(7,'Lê Thị Hồng','1999-12-11','a@gmail.com','1986756323',NULL,NULL),(8,'Nguyễn Xuân Bách','2004-02-15','hacker@gmail.com','1111111111',NULL,NULL),(9,'Võ Trọng Dân','2004-12-12','demo@gmail.com','0915123456',NULL,NULL),(10,'Võ Trọng Dân','2024-12-12','hacker@vnu.edu.vn','0915234567',NULL,NULL),(11,'Võ Trọng Dân','2024-12-12','demo@gmail.com','0915234567',NULL,NULL);
 /*!40000 ALTER TABLE `Passengers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,11 +123,7 @@ CREATE TABLE `Tickets` (
   KEY `FlightID` (`FlightID`),
   CONSTRAINT `Tickets_ibfk_1` FOREIGN KEY (`PassengerID`) REFERENCES `Passengers` (`PassengerID`),
   CONSTRAINT `Tickets_ibfk_2` FOREIGN KEY (`FlightID`) REFERENCES `Flights` (`FlightID`)
-<<<<<<< HEAD
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
->>>>>>> 3f090696754c046597111c5de9db75a3d61b8f41
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +132,7 @@ CREATE TABLE `Tickets` (
 
 LOCK TABLES `Tickets` WRITE;
 /*!40000 ALTER TABLE `Tickets` DISABLE KEYS */;
-INSERT INTO `Tickets` VALUES (3,6,3,'2024-12-20 23:58:19',NULL,'Business',NULL,NULL,NULL),(4,7,2,'2024-12-21 09:34:40',NULL,'Business',NULL,NULL,NULL),(5,8,3,'2024-12-21 10:57:38',NULL,'Economy',NULL,NULL,NULL);
+INSERT INTO `Tickets` VALUES (3,6,3,'2024-12-20 23:58:19',NULL,'Business',NULL,NULL,NULL),(4,7,2,'2024-12-21 09:34:40',NULL,'Business',NULL,NULL,NULL),(5,8,3,'2024-12-21 10:57:38',NULL,'Economy',NULL,NULL,NULL),(6,9,3,'2024-12-21 19:27:25',NULL,'Business',NULL,4,'Business'),(7,10,3,'2024-12-21 20:57:19',NULL,'Business',NULL,4,'Economy'),(8,10,10,'2024-12-21 20:58:52',NULL,'Economy',NULL,NULL,NULL),(9,11,2,'2024-12-21 21:09:59',NULL,'Business',NULL,NULL,NULL),(10,11,3,'2024-12-21 21:11:11',NULL,'Economy',NULL,4,'Economy'),(11,11,11,'2024-12-21 21:16:28',NULL,'Business',NULL,12,'Business');
 /*!40000 ALTER TABLE `Tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +149,7 @@ CREATE TABLE `admins` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-21 11:00:21
+-- Dump completed on 2024-12-21 21:48:57
