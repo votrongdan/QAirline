@@ -2,7 +2,7 @@
 // Thông tin kết nối cơ sở dữ liệu
 $host = 'localhost';
 $dbname = 'QAirline';
-$username = '';
+$username = 'root';
 $password = '';
 
 try {

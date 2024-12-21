@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QAirline Admin Dashboard</title>
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
     <header>
@@ -111,8 +111,22 @@
         
         <section id="ticket-stats">
             <h2>Thống Kê Đặt Vé</h2>
-            <canvas id="ticket-chart"></canvas>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Số Hiệu Chuyến Bay</th>
+                        <th>Điểm Đi</th>
+                        <th>Điểm Đến</th>
+                        <th>Giờ Khởi Hành</th>
+                        <th>Tổng Vé Đặt</th>
+                    </tr>
+                </thead>
+                <tbody id="flight-stats-body">
+                    <?php include 'ticket_stats.php'; ?>
+                </tbody>
+            </table>
         </section>
+        
         <a href="logout.php">Logout</a>
     </main>
     <footer>
