@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css"/>
     <title>Thông tin người dùng</title>
     <style>
         .form-container {
@@ -47,6 +48,28 @@
     </style>
 </head>
 <body>
+    <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <img src="assets/qairline logo.png" alt="logo">
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="about.html">Về chúng tôi</a></li>
+          <li><a href="tourpage.html">TOUR</a></li>
+          <li><a href="package.html" class="active">TRỌN GÓI</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+          <li><a href="#">ĐẶT VÉ NGAY</a></li>
+        </ul>
+        <div class="nav__btns">
+            <a href="booking.html" class="btn">ĐẶT VÉ NGAY</a>
+            <a href="#"><span><i class="ri-play-circle-fill"></i></span></a>
+          </div>
+    </nav>
     <div class="form-container">
         <h2>Nhập thông tin của bạn</h2>
         <form action="lookup.php" method="POST">
@@ -105,5 +128,60 @@
             </div>
         <?php endif; ?>
     </div>
+    <footer id="contact">
+        <div class="section__container footer__container">
+          <div class="footer__col">
+            <div class="footer__logo">
+              <a href="#" class="logo">QAirline</a>
+            </div>
+            <p>
+              Khám phá thế giới dễ dàng và đầy hứng khởi với những chuyến bay tuyệt vời từ chúng tôi.
+            </p>
+            <ul class="footer__socials">
+              <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+              <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+              <li><a href="#"><i class="ri-youtube-line"></i></a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Liên kết</h4>
+            <ul class="footer__links">
+              <li><a href="#">Trang chủ</a></li>
+              <li><a href="#">Khách sạn</a></li>
+              <li><a href="#"></a>Du thuyền</li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Liên hệ chúng tôi</h4>
+            <ul class="footer__links">
+              <li>
+                <a href="#">
+                  <span><i class="ri-phone-fill"></i></span> +91 9876543210
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span><i class="ri-record-mail-line"></i></span> info@QAirline
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span><i class="ri-map-pin-2-fill"></i></span> Hà Nội, Việt Nam
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Đăng ký</h4>
+            <form action="/">
+              <input type="text" placeholder="Nhập email của bạn" />
+              <button class="btn">Đăng ký</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer__bar">
+          All rights reserved.
+        </div>
+      </footer>
 </body>
 </html></div>
