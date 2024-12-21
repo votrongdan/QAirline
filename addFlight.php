@@ -6,13 +6,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Lấy dữ liệu từ form
         $flightNumber = $_POST['flight-number'] ?? '';
-        // $aircraftId = $_POST['aircraft-id'] ?? '';
+        $aircraftId = $_POST['aircraft'] ?? '';
         $departure = $_POST['departure'] ?? '';
         $arrival = $_POST['arrival'] ?? '';
         $departureTime = $_POST['departure-time'] ?? '';
 
         // Câu lệnh SQL sử dụng Prepared Statements để ngăn chặn SQL Injection
-        $sql = "INSERT INTO Flights (FlightNumber, DepartureCity, ArrivalCity, DepartureTime) VALUES (:flightNumber, :departure, :arrival, :departureTime)";
+        $sql = "INSERT INTO Flights (FlightNumber, DepartureCity, ArrivalCity, DepartureTime, AircraftID) VALUES (:flightNumber, :departure, :arrival, :departureTime, :aircraftId)";
 
         // Chuẩn bị truy vấn
         $stmt = $conn->prepare($sql);
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':departure', $departure, PDO::PARAM_STR);
         $stmt->bindParam(':arrival', $arrival, PDO::PARAM_STR);
         $stmt->bindParam(':departureTime', $departureTime, PDO::PARAM_STR);
-        // $stmt->bindParam(':aircraftId', $aircraftId, PDO::PARAM_STR);
+        $stmt->bindParam(':aircraftId', $aircraftId, PDO::PARAM_STR);
 
         // Thực thi truy vấn
         $stmt->execute();

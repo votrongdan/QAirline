@@ -60,24 +60,34 @@
                 <button type="submit">Thêm Tàu Bay</button>
             </form>
 
-            <!-- <h2>Quản Lý Tàu Bay</h2>
-            <form id="aircraft-form">
-                <label for="aircraft-code">Mã Tàu Bay:</label>
-                <input type="text" id="aircraft-code" name="aircraft-code" required>
-                <label for="aircraft-maker">Hãng Sản Xuất:</label>
-                <input type="text" id="aircraft-maker" name="aircraft-maker" required>
-                <label for="seat-info">Thông Tin Ghế:</label>
-                <textarea id="seat-info" name="seat-info" rows="4" required></textarea>
-                <button type="submit">Thêm Tàu Bay</button>
-            </form> -->
         </section>
+
+        <section id="aircraft-stats">
+            <h2>Thống Kê Tàu Bay</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Tàu Bay</th>
+                        <th>Tên tàu bay</th>
+                        <th>Hãng sản xuất</th>
+                        <th>Năm sản xuất</th>
+                        <th>Số ghế phổ thông</th>
+                        <th>Số ghế thương gia</th>
+                    </tr>
+                </thead>
+                <tbody id="aircraft-stats-body">
+                    <?php include 'aircraft_stat.php'; ?>
+                </tbody>
+            </table>
+        </section>
+
         <section id="manage-flights">
             <h2>Quản Lý Chuyến Bay</h2>
             <form id="flight-form" action="addFlight.php" method="post">
                 <label for="flight-number">Số Hiệu:</label>
                 <input type="text" id="flight-number" name="flight-number" required>
                 <label for="aircraft">ID Tàu Bay:</label>
-                <input type="number" id="aircraft" name="aircraft" required>
+                <input type="text" id="aircraft" name="aircraft" required>
                 <label for="departure">Điểm Đi:</label>
                 <input type="text" id="departure" name="departure" required>
                 <label for="arrival">Điểm Đến:</label>
@@ -86,27 +96,6 @@
                 <input type="datetime-local" id="departure-time" name="departure-time" required>
                 <button type="submit">Thêm Chuyến Bay</button>
             </form>
-        </section>
-        <section id="flight-list">
-            <h2>Danh Sách Các Chuyến Bay</h2>
-            <div class="flight-container">
-                <ul id="flight-list-items">
-                    <!-- Các chuyến bay sẽ được hiển thị ở đây -->
-                </ul>
-            </div>
-            <div id="flight-actions">
-                <form id="edit-flight-form" style="display: none;">
-                    <h3>Chỉnh Sửa Giờ Bay</h3>
-                    <label for="edit-flight-time">Giờ Bay Mới:</label>
-                    <input type="datetime-local" id="edit-flight-time" required>
-                    <button type="submit">Cập Nhật</button>
-                </form>
-                <div id="flight-stats" style="display: none;">
-                    <h3>Thống Kê Đặt Vé</h3>
-                    <p id="stats-placeholder">Chọn một chuyến bay để xem thống kê.</p>
-                    <canvas id="stats-chart"></canvas>
-                </div>
-            </div>
         </section>
         
         <section id="ticket-stats">
