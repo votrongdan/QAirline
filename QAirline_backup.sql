@@ -59,7 +59,11 @@ CREATE TABLE `Flights` (
   `AircraftID` varchar(10) NOT NULL,
   PRIMARY KEY (`FlightID`),
   UNIQUE KEY `FlightNumber` (`FlightNumber`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> 3f090696754c046597111c5de9db75a3d61b8f41
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +72,7 @@ CREATE TABLE `Flights` (
 
 LOCK TABLES `Flights` WRITE;
 /*!40000 ALTER TABLE `Flights` DISABLE KEYS */;
-INSERT INTO `Flights` VALUES (1,'DEMO123','Ha Noi','Ho Chi Minh City','1212-12-12 12:12:00',''),(2,'234','Ha Noi','Da Nang','1111-11-11 11:11:00',''),(3,'asdfasdf','Vinh','Ha Noi','1232-01-31 03:45:00','');
+INSERT INTO `Flights` VALUES (1,'DEMO123','Ha Noi','Ho Chi Minh City','1212-12-12 12:12:00','A1'),(2,'234','Ha Noi','Da Nang','1111-11-11 11:11:00','A2'),(3,'asdfasdf','Vinh','Ha Noi','1232-01-31 03:45:00','B1'),(4,'werafd','Ha Noi','Vinh','1232-02-05 00:00:00','B1');
 /*!40000 ALTER TABLE `Flights` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,7 +92,11 @@ CREATE TABLE `Passengers` (
   `PassportNumber` varchar(20) DEFAULT NULL,
   `Nationality` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`PassengerID`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> 3f090696754c046597111c5de9db75a3d61b8f41
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,6 +105,7 @@ CREATE TABLE `Passengers` (
 
 LOCK TABLES `Passengers` WRITE;
 /*!40000 ALTER TABLE `Passengers` DISABLE KEYS */;
+INSERT INTO `Passengers` VALUES (6,'demo','1212-12-12','demo@gmail.com','123456789',NULL,NULL),(7,'a','2342-12-11','a@gmail.com','1986756323',NULL,NULL),(8,'bbbbb','1111-02-15','hacker@gmail.com','1111111111',NULL,NULL);
 /*!40000 ALTER TABLE `Passengers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,14 +122,20 @@ CREATE TABLE `Tickets` (
   `FlightID` int NOT NULL,
   `BookingDate` datetime NOT NULL,
   `SeatNumber` varchar(5) DEFAULT NULL,
-  `Class` enum('Economy','Business','First') NOT NULL,
-  `Price` decimal(10,2) NOT NULL,
+  `Class` enum('Economy','Business') NOT NULL,
+  `Price` decimal(10,2) DEFAULT NULL,
+  `ReturnFlightID` int DEFAULT NULL,
+  `ReturnClass` enum('Economy','Business') DEFAULT NULL,
   PRIMARY KEY (`TicketID`),
   KEY `PassengerID` (`PassengerID`),
   KEY `FlightID` (`FlightID`),
   CONSTRAINT `Tickets_ibfk_1` FOREIGN KEY (`PassengerID`) REFERENCES `Passengers` (`PassengerID`),
   CONSTRAINT `Tickets_ibfk_2` FOREIGN KEY (`FlightID`) REFERENCES `Flights` (`FlightID`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+>>>>>>> 3f090696754c046597111c5de9db75a3d61b8f41
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,6 +144,7 @@ CREATE TABLE `Tickets` (
 
 LOCK TABLES `Tickets` WRITE;
 /*!40000 ALTER TABLE `Tickets` DISABLE KEYS */;
+INSERT INTO `Tickets` VALUES (3,6,3,'2024-12-20 23:58:19',NULL,'Business',NULL,NULL,NULL),(4,7,2,'2024-12-21 09:34:40',NULL,'Business',NULL,NULL,NULL),(5,8,3,'2024-12-21 10:57:38',NULL,'Economy',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `Tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -154,7 +170,7 @@ CREATE TABLE `admins` (
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1,'admin','$2y$10$J46jHcwaCEkfFaBnlqjO2e7QgyNZDDjDMyUW/MdA.mf2jM7VrbcW2');
+INSERT INTO `admins` VALUES (1,'admin','$2y$12$5SkCOyT234NJXXug9G6FKuZ9yYNIyILfWIQ0T9m0mppaeh0wW/Eba');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -167,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-18 21:13:45
+-- Dump completed on 2024-12-21 11:00:21
