@@ -64,7 +64,9 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-
+        <?php else : ?>
+        <p>Không tìm thấy chuyến bay đi phù hợp.</p>
+        <?php endif; ?>
         <!-- Chuyến về -->
         <?php if (!empty($returnDate)) : ?>
         <h2>Chuyến về:</h2>
@@ -125,9 +127,7 @@
         </div>
         <button type="submit">Đặt vé</button>
     </form>
-    <?php else : ?>
-    <p>Không tìm thấy chuyến bay đi phù hợp.</p>
-    <?php endif; ?>
+
     <footer id="contact">
         <div class="section__container footer__container">
           <div class="footer__col">
