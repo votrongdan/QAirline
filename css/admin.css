@@ -228,3 +228,79 @@ footer p {
         padding: 10px 8px;
     }
 }
+
+/* Phần Thống Kê Đặt Vé */
+#aircraft-stats {
+    margin: 20px auto;
+    width: 80%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#aircraft-stats h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#aircraft-stats table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#aircraft-stats table th,
+#aircraft-stats table td {
+    text-align: left;
+    padding: 12px 15px;
+}
+
+#aircraft-stats table thead th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+#aircraft-stats table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#aircraft-stats table tbody tr:hover {
+    background-color: #e0f7fa;
+}
+
+#aircraft-stats table tbody td {
+    border-bottom: 1px solid #ddd;
+}
+
+#aircraft-stats table th {
+    border-bottom: 2px solid #007BFF;
+}
+
+#aircraft-stats table td {
+    color: #333;
+}
+
+#aircraft-stats table tbody td:last-child {
+    text-align: center;
+}
+
+/* Tăng khoảng cách giữa các hàng */
+#aircraft-stats table tbody tr {
+    height: 40px;
+}
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    #aircraft-stats {
+        width: 95%;
+    }
+
+    #aircraft-stats table th,
+    #aircraft-stats table td {
+        padding: 10px 8px;
+    }
+}
