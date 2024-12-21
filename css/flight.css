@@ -417,19 +417,3 @@ input[type="radio"]:checked::before {
     border: 0;
 }
 
-/* Dark Mode Support */
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --extra-light: #1e293b;
-        --text-dark: #f8fafc;
-        --text-light: #cbd5e1;
-    }
-
-    tbody tr:hover {
-        background: #334155;
-    }
-<<<<<<< HEAD
-} */
-=======
-}
->>>>>>> 55bc159b291bd27b8b4a9e99fce78bb17ac1fd44
