@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin người dùng</title>
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Nhập thông tin của bạn</h2>
+        <form action="lookup.php" method="POST">
+            <div class="form-group">
+                <label for="name">Họ tên</label>
+                <input type="text" id="name" name="name" placeholder="Nhập họ tên" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Tra cứu</button>
+            </div>
+        </form>
+
+        <?php if (!empty($message)): ?>
+            <div class="message">
+                <?php echo htmlspecialchars($message); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (!empty($tickets)): ?>
+            <div class="ticket-list">
+                <h3>Danh sách vé đã đặt:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Thời điểm đặt vé</th>
+                            <th>Số hiệu chuyến bay</th>
+                            <th>Hạng vé</th>
+                            <th>Ngày giờ bay</th>
+                            <th>Số hiệu khứ hồi</th>
+                            <th>Hạng vé khứ hồi</th>
+                            <th>Ngày giờ khứ hồi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($tickets as $ticket): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($ticket['BookingDate']); ?></td>
+                                <td><?php echo htmlspecialchars($ticket['FlightNumber']); ?></td>
+                                <td><?php echo htmlspecialchars($ticket['Class']); ?></td>
+                                <td><?php echo htmlspecialchars($ticket['FlightDateTime']); ?></td>
+                                <td><?php echo !empty($ticket['ReturnFlightNumber']) ? htmlspecialchars($ticket['ReturnFlightNumber']) : 'Không có'; ?></td>
+                                <td><?php echo !empty($ticket['ReturnClass']) ? htmlspecialchars($ticket['ReturnClass']) : 'Không có'; ?></td>
+                                <td><?php echo !empty($ticket['ReturnFlightDateTime']) ? htmlspecialchars($ticket['ReturnFlightDateTime']) : 'Không có'; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php endif; ?>
+    </div>
+</body>
+</html></div>
