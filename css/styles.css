@@ -142,7 +142,8 @@ nav {
 }
 
 .nav__btns {
-  display: none;
+  display: flex;
+  gap: 20px
 }
 
 header {

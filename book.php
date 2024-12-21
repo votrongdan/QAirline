@@ -41,7 +41,6 @@ try {
         $stmt_passengers->execute();
 
         $passenger_id = $conn->lastInsertId();
-        $booking_date = date_default_timezone_get();
 
         $stmt_tickets = $conn->prepare($sql_tickets);
         $stmt_tickets->bindParam(':passenger_id', $passenger_id, PDO::PARAM_INT);
@@ -53,7 +52,7 @@ try {
         $stmt_tickets->execute();
 
         echo "<p>Đặt vé thành công! Chúng tôi sẽ liên hệ với bạn qua email hoặc số điện thoại đã cung cấp.</p>";
-        header("Location: index.html");
+        header("Location: booking.html");
     } else {
         echo "<p>Phương thức gửi dữ liệu không hợp lệ.</p>";
         header("Location: flight.html");
